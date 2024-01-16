@@ -358,7 +358,7 @@ def main():
                 loss = loss / args.gradient_accumulation_steps
             tr_loss += loss.item()
             train_loss = round(tr_loss * args.gradient_accumulation_steps / (nb_tr_steps + 1), 4)
-            #logger.info("  step {} loss {}".format(global_step + 1, train_loss))
+            logger.info("  step {} loss {}".format(global_step + 1, train_loss))
 
             if (global_step + 1) % 100 == 0:
                 logger.info("  step {} loss {}".format(global_step + 1, train_loss))
